@@ -1,0 +1,37 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+}
+
+#section1 {
+    background-color: #1f3a93;
+}
+
+#section2 {
+    background-color: #8e44ad;
+}
+
+#section3 {
+    background-color: #27ae60;
+}
+
+.animate {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 1s, transform 1s;
+}
+
+.animate.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
