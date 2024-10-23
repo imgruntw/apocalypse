@@ -1,17 +1,32 @@
-const animatedElements = document.querySelectorAll('.animate');
-
-function checkVisibility() {
-    animatedElements.forEach(element => {
-        const elementTop = element.getBoundingClientRect().top;
-        const windowHeight = window.innerHeight;
-
-        if (elementTop < windowHeight * 0.8) {
-            element.classList.add('visible');
-        } else {
-            element.classList.remove('visible');
-        }
+function init() {
+    const lenis = new Lenis({
+        duration: 1, // speed
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+        direction: "vertical", // vertical, horizontal
+        gestureDirection: "vertical", // vertical, horizontal, both
+        smooth: true,
+        mouseMultiplier: 0.5, // sensibility
+        smoothTouch: false, // Mobile
+        touchMultiplier: 2, // sensibility on mobile
+        infinite: false // Infinite scrolling
     });
-}
 
-window.addEventListener('scroll', checkVisibility);
-checkVisibility();
+    lenis.on("scroll", ({className}) => {
+        console.log(className);
+    });
+
+    function raf(time) {
+        lenis.raf(time);
+        requestAnimationFrame(raf);
+    }
+
+    function addAnotherSection() {
+        const element = document.createElement("div");
+        element.classList.add("section");
+        element.innerHTML = "LAST SECTION";
+        document.body.appendChild(element);
+    }
+
+    requestAnimationFrame(raf);
+    setTimeout(addAnotherSection, 2000);
+}

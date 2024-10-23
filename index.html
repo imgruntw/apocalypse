@@ -4,34 +4,37 @@
     <meta charset="UTF-8">
     <title>Раскрытие тайн Апокалипсиса</title>
     <link rel="icon" href="./favicon.jpeg"/>
+    <link rel="stylesheet" href="https://unpkg.com/lenis@1.1.14/dist/lenis.css"/>
     <link rel="stylesheet" href="./style.css"/>
+    <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
     <script src="./script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <meta http-equiv="Permissions-Policy" content="interest-cohort=()"/>
 </head>
 <body>
 
-<section id="section1" class="animate">
-    <p>Раскрытие тайн апокалипсиса!</p>
-    <p>Приключения Ивана Русакова</p>
-</section>
-
-<section id="section2" class="animate">
-    <p>Заказать сейчас</p>
-</section>
-
-<section id="section3" class="animate">
-    <p>
-        СИНОПСИС
-        Наши дни. Главный герой Иван Русаков – русский, православный, занимается наукой филологией.
-        Повествование начинается со слов главного героя. Он кратко рассказывает происхождение своего рода, описывает себя, а так же описывает
-        события, перевернувшие всю его однообразную и размеренную жизнь.
-    </p>
-</section>
+<div id="app">
+    <div class="section" id="first-section">
+        <p>Раскрытие тайн апокалипсиса!</p>
+        <p>Приключения Ивана Русакова</p>
+    </div>
+    <div class="section" id="second-section">
+        <p>Заказать сейчас</p>
+    </div>
+    <div class="section" id="third-section">
+        <p>
+            СИНОПСИС
+            Наши дни. Главный герой Иван Русаков – русский, православный, занимается наукой филологией.
+            Повествование начинается со слов главного героя. Он кратко рассказывает происхождение своего рода, описывает себя, а так же описывает
+            события, перевернувшие всю его однообразную и размеренную жизнь.
+        </p>
+    </div>
+    <div class="section" id="fouth-section">
+        Fourth section
+    </div>
+</div>
 
 <script>
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility();
+    init();
 </script>
 
 </body>
